@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE } from "@/lib/site-data";
@@ -58,14 +58,11 @@ export function ContactSection() {
             Get Started Today
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-            Ready for a{" "}
-            <span className="bg-gradient-to-r from-emerald-300 to-emerald-500 bg-clip-text text-transparent">
-              free estimate?
-            </span>
+            Ready to get started?
           </h2>
           <p className="mt-4 text-base text-emerald-100/70 sm:text-lg">
             Call now for same-day quotes on tree removal, trimming, and
-            emergency service. Most neighbors hear back within minutes.
+            emergency service. We&apos;re here when you need us.
           </p>
 
           <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-4">
@@ -73,33 +70,22 @@ export function ContactSection() {
               href={SITE.phoneHref}
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "relative h-12 w-full justify-center overflow-hidden bg-emerald-400 text-base font-semibold text-emerald-950 hover:bg-emerald-300 sm:min-w-[240px] sm:w-auto"
+                "relative h-12 w-full justify-center overflow-hidden bg-lime-400 text-base font-bold text-[#1a1a0a] hover:bg-lime-300 sm:min-w-[240px] sm:w-auto"
               )}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 2,
-                  ease: "easeInOut",
-                }}
-              />
               <Phone className="size-5" />
-              {SITE.phone}
+              Call {SITE.phone}
             </motion.a>
             <a
-              href={`mailto:${SITE.email}`}
+              href="#services"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "h-12 w-full justify-center border-emerald-400/30 bg-transparent text-white hover:bg-emerald-400/10 sm:min-w-[220px] sm:w-auto"
+                "h-12 w-full justify-center border-lime-400/50 bg-transparent text-lime-400 hover:bg-lime-400/10 sm:min-w-[200px] sm:w-auto"
               )}
             >
-              <Mail className="size-5" />
-              Email Us
+              View Services
             </a>
           </div>
         </AnimatedSection>

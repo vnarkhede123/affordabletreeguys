@@ -23,12 +23,25 @@ export const SITE = {
   ],
 } as const;
 
-export const HERO_ANIMATION = {
-  poemHTML: `
-    <p>When your <span>trees</span> need <span>expert</span> care across Grant County, Affordable Tree Guys shows up with decades of <span>experience</span> and a neighbor-first approach. From towering oaks to storm-damaged limbs, every <span>cut</span> is planned with <span>precision</span> and respect for your property. We <span>remove</span> hazardous trees safely, <span>trim</span> canopies for lasting health, grind stumps below grade, and clear overgrown brush—leaving your yard clean and <span>beautiful</span>. Fully <span>insured</span> and rated five stars on Google, we're proud to be the community's trusted choice for <span>emergency</span> response day or night. When branches threaten your home or a fallen tree blocks your driveway, one call brings a professional crew ready to work. We haul debris, protect landscaping, and treat every job site like our own backyard. From Marion to Gas City and beyond, Affordable Tree Guys delivers <span>affordable</span> pricing without cutting corners on safety. Your trees deserve craftsmen who care—your property deserves results you can see. That's our <span>promise</span>: honest quotes, expert work, and a yard you're proud to come home to. When storms roll through Indiana, we answer the call—<span>24 hours</span> a day, seven days a week. Our climbers rig every removal with ANSI standards, our ground crew keeps walkways clear, and we never leave until the last chip is swept. Whether it's a single dead limb or a full lot clearing, we scale the job to your budget and timeline. Neighbors recommend us because we show up on time, communicate clearly, and stand behind every <span>branch</span> we cut. Tree removal, precision trimming, stump grinding, lot clearing, storm cleanup—Affordable Tree Guys does it all with the same pride we bring to our own homes. Call <span>765-293-7760</span> today for a free estimate and see why Grant County trusts us with their tallest assets. Professional arbor care isn't a luxury—it's peace of mind. Let us earn yours.</p>
-  `,
-  backgroundImageUrl:
-    "https://images.unsplash.com/photo-1625247839864-11a7669d20fa?w=1920&q=80",
+export const HERO = {
+  imageUrl: "/hero-crew.jpg",
+  imageAlt:
+    "Affordable Tree Guys crew removing a tree with branded truck on site",
+  badge: "Fully Insured · 5.0 Google Rating",
+  headline: "Affordable Tree Guys",
+  subheadline: "Protecting Your Home & Landscape in Grant County",
+} as const;
+
+export const BEFORE_AFTER = {
+  /** Replace with your own job-site photos: public/before-tree.jpg & public/after-tree.jpg */
+  beforeImage: "/before-tree.jpg",
+  afterImage: "/after-tree.jpg",
+  beforeAlt: "Overgrown trees and hazardous limbs before removal",
+  afterAlt: "Clean, open yard after professional tree removal",
+  caption:
+    "Same property — hazardous overgrowth removed, debris hauled, and yard restored.",
+  trimBeforeImage: "/trim-before.jpg",
+  trimAfterImage: "/trim-after.jpg",
 } as const;
 
 export const SERVICES = [
