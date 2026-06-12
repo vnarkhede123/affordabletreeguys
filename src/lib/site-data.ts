@@ -1,5 +1,6 @@
 export const SITE = {
   name: "Affordable Tree Guys",
+  logoUrl: "/logo.png",
   tagline: "Professional Tree Care for Grant County",
   phone: "(765) 293-7760",
   phoneHref: "tel:+17652937760",
@@ -24,26 +25,25 @@ export const SITE = {
 } as const;
 
 export const HERO = {
-  imageUrl: "/hero-crew.jpg",
+  imageUrl: "/hero-job.jpg",
   imageAlt:
-    "Affordable Tree Guys crew removing a tree with branded truck on site",
+    "Affordable Tree Guys removing a tree with a boom lift at a residential property",
   badge: "Fully Insured · 5.0 Google Rating",
   headline: "Affordable Tree Guys",
   subheadline: "Protecting Your Home & Landscape in Grant County",
 } as const;
 
 export const ABOUT = {
-  imageUrl: "/about-crew.jpg",
+  imageUrl: "/about-job.jpg",
   imageAlt:
-    "Affordable Tree Guys crew removing a tree with crane and branded truck",
+    "Freshly cut logs after professional tree removal at a residential property",
 } as const;
 
 export const BEFORE_AFTER = {
-  /** Replace with your own job-site photos: public/before-tree.jpg & public/after-tree.jpg */
-  beforeImage: "/before-tree.jpg",
-  afterImage: "/after-tree.jpg",
-  beforeAlt: "Overgrown trees and hazardous limbs before removal",
-  afterAlt: "Clean, open yard after professional tree removal",
+  beforeImage: "/hero-job.jpg",
+  afterImage: "/about-job.jpg",
+  beforeAlt: "Tree removal in progress with boom lift and crew on site",
+  afterAlt: "Clean yard with cut logs after professional tree removal",
   caption:
     "Same property — hazardous overgrowth removed, debris hauled, and yard restored.",
   trimBeforeImage: "/trim-before.jpg",

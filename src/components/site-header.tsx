@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, Phone, TreePine, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site-data";
@@ -37,46 +38,36 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled || mobileOpen
-          ? "border-b border-white/10 bg-[#0a1208]/95 backdrop-blur-xl shadow-lg shadow-black/20"
+          ? "border-b border-white/10 bg-black/95 backdrop-blur-xl shadow-lg shadow-black/20"
           : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
+      <div className="mx-auto grid h-14 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group flex min-w-0 shrink items-center gap-2 text-white sm:gap-2.5"
+          className="justify-self-start"
           onClick={() => setMobileOpen(false)}
+          aria-label={`${SITE.name} home`}
         >
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 ring-1 ring-emerald-400/30 transition group-hover:bg-emerald-500/30">
-            <TreePine className="size-5 text-emerald-400" />
-          </span>
-          <span className="hidden min-w-0 sm:block">
-            <span className="block truncate text-sm font-semibold tracking-tight">
-              {SITE.name}
-            </span>
-            <span className="block truncate text-[11px] text-emerald-200/70">
-              Grant County, Indiana
-            </span>
-          </span>
+          <BrandLogo priority />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
+        <nav className="hidden items-center justify-center gap-6 lg:flex xl:gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/80 transition hover:text-emerald-300"
+              className="text-sm font-medium text-white/80 transition hover:text-brand-green"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* Prominent click-to-call — always visible */}
+        <div className="flex items-center justify-end gap-2 sm:gap-3">
           <a
             href={SITE.phoneHref}
-            className="hidden items-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-3 py-2 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500/20 sm:inline-flex md:px-4"
+            className="hidden items-center gap-2 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-sm font-semibold text-brand-green transition hover:bg-brand-green/20 sm:inline-flex md:px-4"
             aria-label={`Call ${SITE.phone}`}
           >
             <Phone className="size-4 shrink-0" />
@@ -87,7 +78,7 @@ export function SiteHeader() {
             href={SITE.phoneHref}
             className={cn(
               buttonVariants({ size: "sm" }),
-              "hidden bg-lime-400 font-bold text-[#1a1a0a] hover:bg-lime-300 md:inline-flex"
+              "hidden bg-brand-red font-bold text-white hover:bg-brand-red/90 md:inline-flex"
             )}
           >
             Call Now
@@ -96,7 +87,7 @@ export function SiteHeader() {
           <a
             href={SITE.phoneHref}
             aria-label={`Call ${SITE.phone}`}
-            className="flex size-10 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/15 text-emerald-300 sm:hidden"
+            className="flex size-10 items-center justify-center rounded-xl border border-brand-green/40 bg-brand-green/10 text-brand-green sm:hidden"
           >
             <Phone className="size-4" />
           </a>
@@ -115,7 +106,7 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-white/10 bg-[#0a1208]/98 backdrop-blur-xl lg:hidden">
+        <div className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-white/10 bg-black/98 backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-1 px-4 py-4">
             {NAV_LINKS.map((link) => (
               <Link
@@ -129,14 +120,14 @@ export function SiteHeader() {
             ))}
             <a
               href={SITE.phoneHref}
-              className="mt-2 flex h-12 items-center justify-center rounded-xl bg-lime-400 text-base font-bold text-[#1a1a0a]"
+              className="mt-2 flex h-12 items-center justify-center rounded-xl bg-brand-red text-base font-bold text-white"
               onClick={() => setMobileOpen(false)}
             >
               Call Now
             </a>
             <a
               href={SITE.phoneHref}
-              className="flex h-12 items-center justify-center gap-2 rounded-xl border border-emerald-400/30 text-base font-semibold text-emerald-300"
+              className="flex h-12 items-center justify-center gap-2 rounded-xl border border-brand-green/40 text-base font-semibold text-brand-green"
             >
               <Phone className="size-4" />
               {SITE.phone}

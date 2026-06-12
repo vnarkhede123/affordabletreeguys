@@ -25,18 +25,18 @@ function TestimonialCard({
       className={cn(
         "relative shrink-0 rounded-2xl border backdrop-blur-md",
         featured
-          ? "border-emerald-400/20 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-8 sm:p-10"
+          ? "border-brand-green/20 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-8 sm:p-10"
           : "w-[320px] border-white/10 bg-white/[0.04] p-5 sm:w-[360px]"
       )}
     >
       <div className="flex items-center gap-1">
         {Array.from({ length: 5 }).map((_, i) => (
-          <Star key={i} className="size-3.5 fill-amber-400 text-amber-400" />
+          <Star key={i} className="size-3.5 fill-brand-red text-brand-red" />
         ))}
       </div>
       <Quote
         className={cn(
-          "text-emerald-500/30",
+          "text-brand-green/30",
           featured ? "mt-6 size-10" : "mt-3 size-6"
         )}
       />
@@ -52,7 +52,7 @@ function TestimonialCard({
         <p className={cn("font-semibold text-white", featured && "text-lg")}>
           {author}
         </p>
-        <p className="text-sm text-emerald-400/70">{location}</p>
+        <p className="text-sm text-brand-green/70">{location}</p>
       </footer>
     </div>
   );
@@ -101,32 +101,31 @@ export function TestimonialsSection() {
   return (
     <section
       id="reviews"
-      className="relative overflow-hidden bg-[#0a1208] py-20 sm:py-28"
+      className="relative overflow-hidden bg-black py-20 sm:py-28"
     >
-      {/* Ambient mesh */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(74,222,128,0.08),transparent_50%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(74,222,128,0.06),transparent_40%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(57,181,74,0.08),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(209,31,38,0.05),transparent_40%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">
             Real Neighbor Reviews
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Don&apos;t take our word for it—
-            <span className="bg-gradient-to-r from-emerald-300 to-emerald-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-green to-brand-green-dark bg-clip-text text-transparent">
               {" "}
               ask Grant County
             </span>
           </h2>
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/10 px-4 py-1.5">
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-brand-red/10 px-4 py-1.5">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
                 key={i}
-                className="size-4 fill-amber-400 text-amber-400"
+                className="size-4 fill-brand-red text-brand-red"
               />
             ))}
-            <span className="text-sm font-semibold text-amber-200">
+            <span className="text-sm font-semibold text-white">
               5.0 on Google
             </span>
           </div>
@@ -167,7 +166,7 @@ export function TestimonialsSection() {
                 className={cn(
                   "h-2 rounded-full transition-all duration-300",
                   i === active
-                    ? "w-8 bg-emerald-400"
+                    ? "w-8 bg-brand-green"
                     : "w-2 bg-white/20 hover:bg-white/40"
                 )}
               />
@@ -179,7 +178,7 @@ export function TestimonialsSection() {
             key={`progress-${active}`}
           >
             <motion.div
-              className="h-full origin-left bg-emerald-400"
+              className="h-full origin-left bg-brand-green"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 5, ease: "linear" }}
@@ -196,7 +195,7 @@ export function TestimonialsSection() {
             href={SITE.phoneHref}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "mt-4 inline-flex bg-emerald-500 font-semibold text-emerald-950 hover:bg-emerald-400"
+              "mt-4 inline-flex bg-brand-red font-semibold text-white hover:bg-brand-red/90"
             )}
           >
             <Phone className="size-4" />
@@ -208,8 +207,8 @@ export function TestimonialsSection() {
 
       {/* Dual infinite marquee rows */}
       <div className="relative mt-16 space-y-4 sm:mt-20">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#0a1208] to-transparent sm:w-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#0a1208] to-transparent sm:w-20" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-black to-transparent sm:w-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-black to-transparent sm:w-20" />
 
         <Marquee speed="slow">
           {TESTIMONIALS.map((t, i) => (

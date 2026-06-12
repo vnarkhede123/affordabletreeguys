@@ -16,9 +16,9 @@ const TICKER_ITEMS = [
 
 export function TrustTicker() {
   return (
-    <div className="relative overflow-hidden border-y border-emerald-500/20 bg-[#0a1208] py-3">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0a1208] to-transparent sm:w-24" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0a1208] to-transparent sm:w-24" />
+    <div className="relative overflow-hidden border-y border-brand-green/25 bg-black py-3">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-black to-transparent sm:w-24" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-black to-transparent sm:w-24" />
 
       <Marquee speed="slow" className="gap-0">
         {TICKER_ITEMS.map((item, i) => {
@@ -30,17 +30,17 @@ export function TrustTicker() {
             >
               {Icon && (
                 <Icon
-                  className={`size-4 ${item.highlight ? "fill-amber-400 text-amber-400" : "text-emerald-400"}`}
+                  className={`size-4 ${item.highlight ? "fill-brand-red text-brand-red" : "text-brand-green"}`}
                 />
               )}
               <span
                 className={
-                  item.highlight ? "text-amber-300" : "text-white/70"
+                  item.highlight ? "text-brand-red" : "text-white/70"
                 }
               >
                 {item.text}
               </span>
-              <span className="text-emerald-500/40">✦</span>
+              <span className="text-brand-green/40">✦</span>
             </div>
           );
         })}

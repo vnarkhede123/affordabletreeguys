@@ -23,13 +23,11 @@ const itemVariants = {
   },
 };
 
-
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-dvh w-full items-center justify-center overflow-hidden bg-[#0f1a12]">
-      {/* Background image — subtle zoom on load */}
+    <section className="relative flex min-h-dvh w-full items-center justify-center overflow-hidden bg-black">
       <motion.div
         className="absolute inset-0 z-0"
         aria-hidden="true"
@@ -42,25 +40,23 @@ export function HeroSection() {
           alt={HERO.imageAlt}
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[center_35%]"
           sizes="100vw"
         />
       </motion.div>
 
-      {/* Overlay */}
       <motion.div
-        className="absolute inset-0 z-[1] bg-black/45"
+        className="absolute inset-0 z-[1] bg-black/50"
         aria-hidden="true"
         initial={prefersReducedMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.9, ease }}
       />
       <div
-        className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-black/40 to-black/70"
+        className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-black/50 to-black/80"
         aria-hidden="true"
       />
 
-      {/* Centered content */}
       <motion.div
         className="relative z-10 flex w-full flex-col items-center px-4 py-28 text-center sm:px-6"
         variants={contentVariants}
@@ -69,16 +65,17 @@ export function HeroSection() {
       >
         <motion.p
           variants={itemVariants}
-          className="text-xs font-medium uppercase tracking-[0.35em] text-amber-400/90 sm:text-sm"
+          className="text-xs font-medium uppercase tracking-[0.35em] text-brand-green sm:text-sm"
         >
           {HERO.badge}
         </motion.p>
 
         <motion.h1
           variants={itemVariants}
-          className="mt-5 font-[family-name:var(--font-serif)] text-5xl font-bold leading-[1.05] tracking-tight text-white drop-shadow-md sm:text-6xl md:text-7xl lg:text-8xl"
+          className="mt-5 font-[family-name:var(--font-serif)] text-5xl font-bold leading-[1.05] tracking-tight drop-shadow-md sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          {HERO.headline}
+          <span className="text-brand-red">Affordable</span>{" "}
+          <span className="text-brand-green">Tree Guys</span>
         </motion.h1>
 
         <motion.p
@@ -96,7 +93,7 @@ export function HeroSection() {
             href={SITE.phoneHref}
             whileHover={prefersReducedMotion ? undefined : { scale: 1.04 }}
             whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-            className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-md bg-lime-400 px-8 text-sm font-bold uppercase tracking-wider text-[#1a1a0a] shadow-lg shadow-lime-400/25 transition-colors hover:bg-lime-300 sm:h-[52px] sm:min-w-[200px] sm:text-base"
+            className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-md bg-brand-red px-8 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-red/30 transition-colors hover:bg-brand-red/90 sm:h-[52px] sm:min-w-[200px] sm:text-base"
           >
             Call Now
           </motion.a>
@@ -104,18 +101,17 @@ export function HeroSection() {
             href="#services"
             whileHover={prefersReducedMotion ? undefined : { scale: 1.04 }}
             whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-            className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-md border border-lime-400/60 bg-black/25 px-8 text-sm font-semibold uppercase tracking-wider text-lime-400 backdrop-blur-sm transition-colors hover:border-lime-300 hover:bg-lime-400/10 hover:text-lime-300 sm:h-[52px] sm:min-w-[200px] sm:text-base"
+            className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-md border border-brand-green/70 bg-black/30 px-8 text-sm font-semibold uppercase tracking-wider text-brand-green backdrop-blur-sm transition-colors hover:border-brand-green hover:bg-brand-green/10 sm:h-[52px] sm:min-w-[200px] sm:text-base"
           >
             View Services
           </motion.a>
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.a
         href="#services"
         aria-label="Scroll to services"
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/50 transition-colors hover:text-white/80"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/50 transition-colors hover:text-brand-green"
         initial={prefersReducedMotion ? false : { opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.1, ease }}

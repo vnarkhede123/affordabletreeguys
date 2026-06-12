@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TreePine } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { Separator } from "@/components/ui/separator";
 import { SITE } from "@/lib/site-data";
 
@@ -7,16 +7,11 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-emerald-950/10 bg-[#0a1208] pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/60 lg:pb-0">
+    <footer className="border-t border-brand-green/10 bg-black pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-white/60 lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5 text-white">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-emerald-500/20 ring-1 ring-emerald-400/30">
-                <TreePine className="size-5 text-emerald-400" />
-              </span>
-              <span className="font-semibold">{SITE.name}</span>
-            </div>
+            <BrandLogo variant="footer" />
             <p className="mt-4 text-sm leading-relaxed">
               Professional, affordable tree service for Gas City, Marion, and
               all of Grant County, Indiana. Fully insured with a 5-star Google
@@ -37,7 +32,7 @@ export function SiteFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="transition hover:text-emerald-300"
+                      className="transition hover:text-brand-green"
                     >
                       {link.label}
                     </Link>
@@ -60,7 +55,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={SITE.phoneHref}
-                    className="transition hover:text-emerald-300"
+                    className="transition hover:text-brand-red"
                   >
                     {SITE.phone}
                   </a>

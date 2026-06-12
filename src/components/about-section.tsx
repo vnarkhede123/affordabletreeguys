@@ -22,9 +22,9 @@ const HIGHLIGHTS = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#0a1208] py-16 text-white sm:py-24">
+    <section id="about" className="relative overflow-hidden bg-black py-16 text-white sm:py-24">
       <motion.div
-        className="pointer-events-none absolute -right-40 bottom-0 size-96 rounded-full bg-emerald-500/5 blur-3xl"
+        className="pointer-events-none absolute -right-40 bottom-0 size-96 rounded-full bg-brand-green/5 blur-3xl"
         animate={{ y: [0, -30, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
@@ -33,7 +33,7 @@ export function AboutSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <AnimatedSection className="relative pb-4 sm:pb-0">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 sm:aspect-[4/5] sm:rounded-3xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 sm:rounded-3xl">
               <Image
                 src={ABOUT.imageUrl}
                 alt={ABOUT.imageAlt}
@@ -41,13 +41,13 @@ export function AboutSection() {
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1208]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             </div>
             <StaggerContainer className="mt-4 grid grid-cols-2 gap-3 sm:mt-0 sm:gap-3 lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0">
               {STATS.map((stat) => (
                 <StaggerItem key={stat.label}>
-                  <div className="rounded-xl border border-white/10 bg-[#142010]/95 px-3 py-2.5 backdrop-blur-sm sm:rounded-2xl sm:px-4 sm:py-3">
-                    <p className="font-[family-name:var(--font-display)] text-xl font-bold text-emerald-400 sm:text-2xl">
+                  <div className="rounded-xl border border-white/10 bg-black/90 px-3 py-2.5 backdrop-blur-sm sm:rounded-2xl sm:px-4 sm:py-3">
+                    <p className="font-[family-name:var(--font-display)] text-xl font-bold text-brand-green sm:text-2xl">
                       {stat.value}
                     </p>
                     <p className="text-[11px] text-white/60 sm:text-xs">
@@ -60,7 +60,7 @@ export function AboutSection() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.15} className="pt-2 sm:pt-0">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">
               About Us
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
@@ -81,7 +81,7 @@ export function AboutSection() {
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {HIGHLIGHTS.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-green" />
                   <span className="text-white/80">{item}</span>
                 </li>
               ))}
@@ -92,9 +92,9 @@ export function AboutSection() {
                 <Badge
                   key={city}
                   variant="outline"
-                  className="border-white/15 bg-white/5 text-white/80"
+                  className="border-brand-green/30 bg-brand-green/5 text-white/80"
                 >
-                  <MapPin className="size-3" />
+                  <MapPin className="size-3 text-brand-green" />
                   {city}
                 </Badge>
               ))}
