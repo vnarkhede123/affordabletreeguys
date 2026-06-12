@@ -26,6 +26,7 @@ export const SITE = {
 
 export const HERO = {
   imageUrl: "/hero-logo.png",
+  mobileImageUrl: "/hero-logo-mobile.png",
   imageAlt: "Affordable Tree Guys — tree removal, trimming, and stump grinding",
 } as const;
 

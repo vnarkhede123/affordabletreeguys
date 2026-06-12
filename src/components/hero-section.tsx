@@ -18,11 +18,19 @@ export function HeroSection() {
         transition={{ duration: 0.8, ease }}
       >
         <Image
+          src={HERO.mobileImageUrl}
+          alt={HERO.imageAlt}
+          fill
+          priority
+          className="object-cover object-center md:hidden"
+          sizes="100vw"
+        />
+        <Image
           src={HERO.imageUrl}
           alt={HERO.imageAlt}
           fill
           priority
-          className="object-cover object-center"
+          className="hidden object-cover object-center md:block"
           sizes="100vw"
         />
       </motion.div>
