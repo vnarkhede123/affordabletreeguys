@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
-import { BrandLogo } from "@/components/brand-logo";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site-data";
@@ -42,17 +41,8 @@ export function SiteHeader() {
           : "bg-transparent"
       )}
     >
-      <div className="mx-auto grid h-14 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="justify-self-start"
-          onClick={() => setMobileOpen(false)}
-          aria-label={`${SITE.name} home`}
-        >
-          <BrandLogo priority />
-        </Link>
-
-        <nav className="hidden items-center justify-center gap-6 lg:flex xl:gap-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6 lg:px-8">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -64,7 +54,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center justify-end gap-2 sm:gap-3">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3 lg:ml-0">
           <a
             href={SITE.phoneHref}
             className="hidden items-center gap-2 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-sm font-semibold text-brand-green transition hover:bg-brand-green/20 sm:inline-flex md:px-4"
