@@ -25,9 +25,12 @@ export const SITE = {
 } as const;
 
 export const HERO = {
-  imageUrl: "/hero-logo.png",
-  mobileImageUrl: "/hero-logo-mobile.png",
-  imageAlt: "Affordable Tree Guys — tree removal, trimming, and stump grinding",
+  imageUrl: "/hero-job.jpg",
+  imageAlt:
+    "Affordable Tree Guys removing a tree with a boom lift at a residential property",
+  badge: "Fully Insured · 5.0 Google Rating",
+  headline: "Affordable Tree Guys",
+  subheadline: "Protecting Your Home & Landscape in Grant County",
 } as const;
 
 export const ABOUT = {
