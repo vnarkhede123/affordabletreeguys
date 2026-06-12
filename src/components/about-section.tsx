@@ -9,7 +9,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/animated-section";
-import { SITE, STATS } from "@/lib/site-data";
+import { ABOUT, SITE, STATS } from "@/lib/site-data";
 
 const HIGHLIGHTS = [
   "Free on-site estimates",
@@ -35,10 +35,10 @@ export function AboutSection() {
           <AnimatedSection className="relative pb-4 sm:pb-0">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 sm:aspect-[4/5] sm:rounded-3xl">
               <Image
-                src="https://images.unsplash.com/photo-1592985199448-29659f57929e?w=1200&q=80"
-                alt="Arborist trimming tree branches"
+                src={ABOUT.imageUrl}
+                alt={ABOUT.imageAlt}
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1208]/80 via-transparent to-transparent" />

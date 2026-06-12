@@ -32,6 +32,12 @@ export const HERO = {
   subheadline: "Protecting Your Home & Landscape in Grant County",
 } as const;
 
+export const ABOUT = {
+  imageUrl: "/about-crew.jpg",
+  imageAlt:
+    "Affordable Tree Guys crew removing a tree with crane and branded truck",
+} as const;
+
 export const BEFORE_AFTER = {
   /** Replace with your own job-site photos: public/before-tree.jpg & public/after-tree.jpg */
   beforeImage: "/before-tree.jpg",
